@@ -7,12 +7,6 @@ let currentDate = new Date();
 const today = new Date().toISOString().split("T")[0];
 dateEle.setAttribute('max' , today);
 
-let d1 = currentDate.getDate();
-let m1 = currentDate.getMonth() + 1;
-let y1 = currentDate.getFullYear();
-
-
-
 btnEle.addEventListener("click" , () => {
     resultEle.innerHTML = "";
     let dateEnter = new Date(dateEle.value)
@@ -22,31 +16,40 @@ btnEle.addEventListener("click" , () => {
         resultEle.textContent = "";
     }
     else {
-        finalAns(dateEnter);
-        return;
+        finalAns(dateEnter)
     }
 })
 
 function finalAns(dateEnter) {
-    let d2 = dateEnter.getDate();
-    let m2 = dateEnter.getMonth() + 1;
-    let y2 = dateEnter.getFullYear();
+    d1 = dateEnter.getDate();
+    m1 = dateEnter.getMonth();
+    y1 = dateEnter.getFullYear();
 
-    let dd = d1 - d2;
-    if(dd < 0) {
-    dd = (d1 + 30) - d2;
-    m1--;
+    d2 = currentDate.getDate();
+    m2 = currentDate.getMonth();
+    y2 = currentDate.getFullYear();
+
+    let d3;
+    let m3;
+    let y3;
+
+
+    if(d2 >= d1){
+        d3 = d2 - d1;
+    } else {
+        d3 = (d2 + 30) - d1;
+        m2--;
     }
 
-    let md = m1 - m2;
-    if(md < 0) {
-    md = (m1 + 12) - m2;
-    y1--;
+    if(m2 >= m1){
+        m3 = m2 - m1;
+    } else {
+        m3 = (m2 + 12) - m1;
+        y2--;
     }
+    y3 = y2 - y1;
 
-    let yd = y1 - y2;
+    resultEle.innerHTML = `your age is ${y3} years ${m3} months & ${d3} days`
 
-    resultEle.innerHTML = `Your age is ${yd} years ${md} months & ${dd} days`;
     dateEle.value = "";
-    return;
 }
