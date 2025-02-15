@@ -1,0 +1,79 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgba(0, 0, 0, 0.847); 
+}
+
+h1 {
+    color: #0ef;
+    margin-top: 1px;
+    font-size: 44px;
+}
+.container {
+    width: 500px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,-20%);
+    border-radius: 5px;
+    padding: 10px 0px;
+    text-align: center;
+    box-shadow: 10px 20px 20px rgba(0,0,0,0.8);
+    border: 2px solid #0ef;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    font-size: 19px;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+.date {
+    cursor: pointer;
+    padding: 6px 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 30px;
+    background-color: rgba(62, 50, 50, 0.995);
+    color: white;
+}
+
+
+.btn {
+    background-color: #0ef;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(0, 238, 255, 0.785); 
+    }
+    &:active {
+        background-color: red;
+        color: white;
+
+    }
+}
+.result {
+    color: white;
+    font-size: 30px;
+    padding: 10px 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
