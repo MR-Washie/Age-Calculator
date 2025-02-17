@@ -35,7 +35,8 @@ h2 {
 
 .date {
     cursor: pointer;
-    padding: 6px 50px;
+    padding: 10px 10px;
+    width: 50%;
     font-size: 20px;
     border-radius: 5px;
     border: none;
